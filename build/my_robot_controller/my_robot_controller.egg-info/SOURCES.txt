@@ -15,6 +15,8 @@ my_robot_controller/__init__.py
 my_robot_controller/draw_circle.py
 my_robot_controller/mapping.py
 my_robot_controller/mapping_backup.py
+my_robot_controller/mapping_new.py
+my_robot_controller/mapping_true_maybe.py
 my_robot_controller/my_first_node.py
 my_robot_controller/pose_sub.py
 my_robot_controller/turtle_controller.py

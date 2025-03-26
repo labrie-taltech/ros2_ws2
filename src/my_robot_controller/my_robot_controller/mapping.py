@@ -19,18 +19,18 @@ class TurtlebotMappingNode(Node):
     def robot_controller(self, scan: LaserScan):
         cmd = Twist()
         # Define the width of the range for obstacle detection
-        a = 25
+        a = 20
         # Extract directional distances
         self._front = min(scan.ranges[:a+1] + scan.ranges[-a:])
-        self._left = min(scan.ranges[90-a:90+a+1])
-        self._right = min(scan.ranges[270-a:270+a+1])
+        self._left = max(scan.ranges[90-a:90+a+1])
+        self._right = max(scan.ranges[270-a:270+a+1])
         # Navigation logic based on obstacle detection
         if self._front < 1.0: # Obstacle ahead
             if self._right < self._left:
-                cmd.linear.x = 0.07
+                cmd.linear.x = 0.06
                 cmd.angular.z = 0.7 # Turn left
             else:
-                cmd.linear.x = 0.07
+                cmd.linear.x = 0.06
                 cmd.angular.z = -0.7 # Turn right
         else:
             cmd.linear.x = 0.4
