@@ -1,4 +1,3 @@
 hello world
 
-try2
-
+this repo is or av course tasks
