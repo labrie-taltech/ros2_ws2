@@ -27,14 +27,14 @@ class TurtlebotMappingNode(Node):
         # Navigation logic based on obstacle detection
         if self._front < 1.0: # Obstacle ahead
             if self._right < self._left:
-                cmd.linear.x = 0.06
+                cmd.linear.x = 0.1
                 cmd.angular.z = 0.7 # Turn left
             else:
-                cmd.linear.x = 0.06
+                cmd.linear.x = 0.1
                 cmd.angular.z = -0.7 # Turn right
         else:
-            cmd.linear.x = 0.4
-            cmd.angular.z = 0.0 # Move forward
+            cmd.linear.x = 0.3
+            cmd.angular.z = 0.01 # Move forward
         # Publish the command
         self._pose_publisher.publish(cmd)
 def main(args=None):

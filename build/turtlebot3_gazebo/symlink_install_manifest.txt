@@ -54,6 +54,7 @@
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/my_world.world
+/home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/task1_map.world
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world
 /home/student/ros2_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage3.world
