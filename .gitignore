@@ -1,6 +1,3 @@
 .vscode/
-build/
-install/
-log/
 src/turtlebot3_simulations/
-src/turtlebot3
+src/turtlebot3/

@@ -16,8 +16,8 @@ class TurtleNavigationNode(Node):
         self.goal_poses = [  # Define goal positions and orientations
             {'x': -2.36, 'y': -0.65, 'yaw': 30},
             {'x': 0.57, 'y': -2.50, 'yaw': 60},
-            {'x': 3.12, 'y': -1.63, 'yaw': 30},
-            {'x': -0.54, 'y': -2.22, 'yaw': 90}
+            {'x': 3.12, 'y': -1.63, 'yaw': 0},
+            {'x': -1.96, 'y': -2.68, 'yaw': 90}
         ]
 
         self.current_goal_index = 0
@@ -30,7 +30,7 @@ class TurtleNavigationNode(Node):
 
         # Subscriber
         self.odom_listener = self.create_subscription(
-            Odometry, "/odom", self.odom_callback, 15)
+            Odometry, "/odom", self.odom_callback, 10)
 
         # Publish the initial pose
         time.sleep(5) # wait to let the simulation and turtlebot navigation to being loaded.
@@ -61,11 +61,11 @@ class TurtleNavigationNode(Node):
             (current_pose.position.y - goal_pose['y']) ** 2
         )
 
-        if distance_to_goal < 0.5:  # Threshold to consider the goal reached
+        if distance_to_goal < 0.3:  # Threshold to consider the goal reached
             self.publish_next_goal()
 
     def publish_next_goal(self):
-        if self.current_goal_index < len(self.goal_poses) - 1:
+        if self.current_goal_index < len(self.goal_poses)-1:
             self.current_goal_index += 1
             self.publish_goal()
         else:
@@ -76,7 +76,7 @@ class TurtleNavigationNode(Node):
         
         goal = self.goal_poses[self.current_goal_index]
         pose_msg = PoseStamped()
-        pose_msg.header.frame_id = 'odom'
+        pose_msg.header.frame_id = 'map'
         pose_msg.pose.position.x = goal['x']
         pose_msg.pose.position.y = goal['y']
 
